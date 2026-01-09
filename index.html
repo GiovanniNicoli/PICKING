@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Il Picking - Guida Semplificata</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+/* SETUP DI BASE */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #f0f2f5;
+  display: grid;
+  gap: 20px;
+  grid-template-columns: 1fr;
+  margin: 0;
+  min-height: 100vh;
+  padding: 20px 0;
+  place-items: center;
+  font-family: 'Open Sans', sans-serif;
+}
+
+/* CONTENITORE SLIDE */
+.slide-container {
+  align-items: center;
+  background-color: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 10px 25px rgba(0, 51, 102, 0.15); /* Ombra blu scuro */
+  display: flex;
+  flex-direction: column;
+  height: 720px;
+  justify-content: center;
+  overflow: hidden;
+  padding: 60px;
+  position: relative;
+  width: 1280px;
+}
+
+/* DECORAZIONI SFONDO */
+.slide-container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 12px;
+  background: linear-gradient(90deg, #003366 0%, #00509e 100%); /* Blu accessibile */
+  z-index: 10;
+}
+
+/* TIPOGRAFIA ACCESSIBILE (EASY TO READ) */
+.slide-container h1,
+.slide-container h2,
+.slide-container h3 {
+  color: #003366; /* Blu scuro per alto contrasto */
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+  margin: 0;
+  line-height: 1.2;
+}
+
+.slide-container h1 {
+  font-size: 90px;
+  letter-spacing: -1px;
+}
+
+.slide-container h2.slide-title {
+  font-size: 56px; /* Titoli grandi */
+  margin-bottom: 30px;
+  width: 100%;
+  border-bottom: 4px solid #ffcc00; /* Accento giallo per visibilità */
+  padding-bottom: 10px;
+}
+
+.slide-container h3 {
+  font-size: 32px;
+  margin-bottom: 10px;
+  color: #004080;
+}
+
+.slide-container p, 
+.slide-container li {
+  color: #333333; /* Grigio scuro quasi nero */
+  font-family: 'Open Sans', sans-serif;
+  font-size: 28px; /* Testo grande */
+  line-height: 1.4;
+  margin-bottom: 15px;
+}
+
+.subtitle {
+  font-size: 36px !important;
+  color: #00509e !important;
+  margin-top: 20px;
+}
+
+.content-area {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  justify-content: center;
+  width: 100%;
+}
+
+/* LAYOUT 2 COLONNE (Standard per Immagine + Testo) */
+.two-column {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+.text-column {
+    padding-right: 20px;
+}
+
+.image-wrapper {
+  border-radius: 20px;
+  overflow: hidden;
+  border: 4px solid #003366;
+  width: 100%;
+  aspect-ratio: 11 / 6; /* 2816x1536 corrisponde esattamente a 11:6 */
+  background-color: #eee;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.image-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Copre l'area mantenendo le proporzioni */
+}
+
+/* Messaggio se l'immagine manca */
+.image-wrapper img:after { 
+  content: "⚠️ " attr(alt);
+  display: block;
+  font-size: 16px;
+  color: #666;
+  padding: 20px;
+  text-align: center;
+}
+
+/* LAYOUT SPECIALI */
+.timeline-step {
+    background-color: #f0f7ff;
+    padding: 15px;
+    border-radius: 10px;
+    border-left: 5px solid #003366;
+    margin-bottom: 15px;
+}
+
+.qa-layout {
+  text-align: center;
+}
+    </style>
+</head>
+<body>
+
+<!-- SLIDE 1: COPERTINA -->
+<div class="slide-container" id="slide1">
+    <div style="text-align: center;">
+        <i class="fa-solid fa-boxes-stacked" style="font-size: 100px; color: #ffcc00; margin-bottom: 30px;"></i>
+        <h1>IL PICKING</h1>
+        <p class="subtitle">Guida semplice al lavoro in magazzino</p>
+    </div>
+</div>
+
+<!-- SLIDE 2: PUNTO 1 (Cos'è) -->
+<div class="slide-container" id="slide2">
+    <h2 class="slide-title">1. Che cos'è il Picking?</h2>
+    <div class="content-area">
+        <div class="two-column">
+            <div class="text-column">
+                <p><strong>È un lavoro importante.</strong></p>
+                <p>Significa prendere gli oggetti dagli scaffali.</p>
+                <p>Serve per preparare gli ordini dei clienti.</p>
+            </div>
+            <div class="image-wrapper">
+                <!-- IMMAGINE 1 -->
+                <img src="immagine_1.png" alt="Salva il file come: immagine_1.png" onerror="this.src='https://placehold.co/1100x600/e0e0e0/333333?text=Salva+immagine_1.png'">
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- SLIDE 3: PUNTO 2 (Il Ciclo) -->
+<div class="slide-container" id="slide3">
+    <h2 class="slide-title">2. Cosa dobbiamo fare?</h2>
+    <div class="content-area">
+        <div class="two-column">
+            <div class="text-column">
+                <div class="timeline-step">1. Arriva l'ordine del cliente.</div>
+                <div class="timeline-step">2. Leggiamo la lista.</div>
+                <div class="timeline-step">3. Prendiamo la merce.</div>
+                <div class="timeline-step">4. Spediamo la scatola.</div>
+            </div>
+            <div class="image-wrapper">
+                <!-- IMMAGINE 2 -->
+                <img src="immagine_2.png" alt="Salva il file come: immagine_2.png" onerror="this.src='https://placehold.co/1100x600/e0e0e0/333333?text=Salva+immagine_2.png'">
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- SLIDE 4: PUNTO 3 (Come si lavora) -->
+<div class="slide-container" id="slide4">
+    <h2 class="slide-title">3. Come si lavora?</h2>
+    <div class="content-area">
+        <div class="two-column">
+            <div class="text-column">
+                <p><i class="fa-solid fa-person-walking"></i> <strong>Modo 1:</strong><br>Tu cammini e vai a prendere l'oggetto.</p>
+                <p style="margin-top: 30px;"><i class="fa-solid fa-robot"></i> <strong>Modo 2:</strong><br>Stai fermo e la macchina ti porta l'oggetto.</p>
+            </div>
+            <div class="image-wrapper">
+                <!-- IMMAGINE 3 -->
+                <img src="immagine_3.png" alt="Salva il file come: immagine_3.png" onerror="this.src='https://placehold.co/1100x600/e0e0e0/333333?text=Salva+immagine_3.png'">
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- SLIDE 5: PUNTO 4 (Gli Aiuti) -->
+<div class="slide-container" id="slide5">
+    <h2 class="slide-title">4. Gli Aiuti</h2>
+    <div class="content-area">
+        <div class="two-column">
+            <div class="text-column">
+                <p><i class="fa-solid fa-list-check" style="color: #ffcc00; margin-right: 10px;"></i> <strong>La Lista:</strong><br>Il foglio che dice cosa prendere.</p>
+                <p style="margin-top: 30px;"><i class="fa-solid fa-lightbulb" style="color: #ffcc00; margin-right: 10px;"></i> <strong>Le Luci:</strong><br>Si accendono sullo scaffale. È facile come un semaforo.</p>
+            </div>
+            <div class="image-wrapper">
+                <!-- IMMAGINE 4 -->
+                <img src="immagine_4.png" alt="Salva il file come: immagine_4.png" onerror="this.src='https://placehold.co/1100x600/e0e0e0/333333?text=Salva+immagine_4.png'">
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- SLIDE 6: PUNTO 5 (Regole) -->
+<div class="slide-container" id="slide6">
+    <h2 class="slide-title">5. Regole d'Oro</h2>
+    <div class="content-area">
+        <div class="two-column">
+            <div class="text-column">
+                <p><i class="fa-solid fa-check-circle" style="color: green;"></i> Oggetto <strong>GIUSTO</strong>.</p>
+                <p><i class="fa-solid fa-scale-balanced" style="color: orange;"></i> Quantità <strong>GIUSTA</strong>.</p>
+                <p><i class="fa-solid fa-person-walking-arrow-right" style="color: #003366;"></i> Camminare <strong>BENE</strong> (senza giri inutili).</p>
+            </div>
+            <div class="image-wrapper">
+                <!-- IMMAGINE 5 -->
+                <img src="immagine_5.png" alt="Salva il file come: immagine_5.png" onerror="this.src='https://placehold.co/1100x600/e0e0e0/333333?text=Salva+immagine_5.png'">
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- SLIDE 7: FINE -->
+<div class="slide-container" id="slide7">
+    <div class="qa-layout">
+        <i class="fa-solid fa-thumbs-up" style="font-size: 100px; color: #003366; margin-bottom: 30px;"></i>
+        <h1>Buon Lavoro!</h1>
+    </div>
+</div>
+
+</body>
+</html>
